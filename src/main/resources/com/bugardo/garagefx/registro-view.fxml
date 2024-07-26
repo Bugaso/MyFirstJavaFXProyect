@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="regPane" layoutY="35.0" prefHeight="366.0" prefWidth="505.0" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.registroController" stylesheets="@../../../com.bugardo.css/textField.css">
+   <children>
+       <Label fx:id="titReg" layoutX="198.0" layoutY="39.0" prefHeight="17.0" prefWidth="113.0" text="Registre el vehiculo" />
+       <TextField fx:id="patText" layoutX="178.0" layoutY="104.0" prefHeight="25.0" prefWidth="149.0">
+         <tooltip>
+            <Tooltip fx:id="patTool" text="Ingrese la patente del vehiculo" textAlignment="CENTER" />
+         </tooltip></TextField>
+
+      <Spinner fx:id="hourText" layoutX="178.0" layoutY="151.0" max="23" min="0" prefHeight="25.0" prefWidth="69.0" >
+         <tooltip>
+            <Tooltip fx:id="horTool" text="Hora de llegada" textAlignment="CENTER" />
+         </tooltip></Spinner>
+      <Spinner fx:id="minText" layoutX="260.0" layoutY="151.0" max="59" min="0" prefHeight="25.0" prefWidth="69.0">
+         <tooltip>
+            <Tooltip fx:id="minTool" text="Minuto de llegada" />
+         </tooltip></Spinner>
+      <Label layoutX="178.0" layoutY="87.0" text="Patente" />
+      <Label layoutX="178.0" layoutY="134.0" prefHeight="17.0" prefWidth="34.0" text="Hora" />
+      <Label layoutX="260.0" layoutY="134.0" text="Minuto" />
+      <CheckBox fx:id="pagCheck" layoutX="264.0" layoutY="183.0" mnemonicParsing="false" text="Pagado" />
+      <Button fx:id="regBtn" layoutX="180.0" layoutY="216.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Registrar" onAction="#Salvar"/>
+   </children>
+
+</Pane>

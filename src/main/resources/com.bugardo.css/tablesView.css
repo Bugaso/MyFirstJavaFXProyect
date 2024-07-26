@@ -1,0 +1,95 @@
+/* Estilo para la tabla */
+.table-view {
+    -fx-background-color: #ffffff; /* Fondo blanco */
+    -fx-border-color: #dddddd; /* Borde gris claro */
+    -fx-border-width: 1px;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1); /* Sombra sutil */
+}
+
+/* Estilo para las cabeceras de las columnas */
+.table-view .column-header {
+    -fx-background-color: #f4f4f4; /* Fondo gris claro */
+    -fx-text-fill: #333333; /* Texto gris oscuro */
+    -fx-font-weight: bold;
+    -fx-padding: 5px;
+    -fx-border-bottom: solid #dddddd; /* Línea inferior de la cabecera */
+}
+
+/* Estilo para las celdas de la tabla */
+.table-view .table-cell {
+    -fx-padding: 1px; /* Espaciado interno */
+    -fx-alignment: CENTER; /* Alineación de texto */
+    -fx-background-color: #ffffff; /* Fondo blanco */
+    -fx-text-fill: #333333; /* Texto gris oscuro */
+    -fx-border-color: #f0f0f0; /* Borde gris muy claro */
+    -fx-border-width: 0 0 1px 0; /* Borde inferior */
+}
+
+/* Estilo para las celdas cuando se seleccionan */
+.table-view .table-cell:filled:selected {
+    -fx-background-color: #007bff; /* Fondo azul claro para selección */
+    -fx-text-fill: #ffffff; /* Texto blanco en selección */
+}
+
+/* Estilo para las celdas al pasar el ratón sobre ellas */
+.table-view .table-cell:hover {
+    -fx-background-color: #f1f1f1; /* Fondo gris claro al pasar el ratón */
+}
+
+/* Estilo para la fila de la tabla */
+.table-view .table-row-cell {
+    -fx-padding: 0; /* Sin espaciado interno en las filas */
+    -fx-border-color: #e0e0e0; /* Borde gris claro */
+    -fx-border-width: 0 0 1px 0; /* Borde inferior */
+}
+
+/* Estilo para la fila cuando se selecciona */
+.table-view .table-row-cell:selected {
+    -fx-background-color: #e9ecef; /* Fondo gris muy claro para fila seleccionada */
+}
+
+/* Estilo para la fila cuando pasa el ratón sobre ella */
+.table-view .table-row-cell:hover {
+    -fx-background-color: #f5f5f5; /* Fondo gris claro al pasar el ratón */
+}
+
+/* Estilo para el texto de las celdas */
+.table-view .table-cell {
+    -fx-text-fill: #333333; /* Texto gris oscuro */
+}
+
+/* Estilo para las celdas con valores booleanos (checkboxes) */
+.table-view .table-cell .check-box {
+    -fx-alignment: CENTER;
+}
+
+/* Estilo para la tabla vacía */
+.table-view:empty {
+    -fx-background-color: #f8f9fa; /* Fondo gris claro cuando está vacío */
+    -fx-font-style: italic;
+    -fx-text-fill: #6c757d; /* Texto gris para tabla vacía */
+}
+
+/* ModernButton.css */
+.button {
+    -fx-background-color: #4CAF50; /* Verde */
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 2.5px 5px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: #45a049; /* Verde más oscuro */
+}
+
+.button:pressed {
+    -fx-background-color: #397d39; /* Verde aún más oscuro */
+}
