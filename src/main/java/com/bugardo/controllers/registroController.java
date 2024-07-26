@@ -12,7 +12,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
-import static com.bugardo.controllers.salidaController.cargarVehiculo;
 
 
 public class registroController implements Initializable {
@@ -71,7 +70,7 @@ public class registroController implements Initializable {
         ve.setPago(pagCheck.isSelected());
 
         if(VehiculosEstacionados.getVehiculo(ve) == null){
-            cargarVehiculo(ve);
+            VehiculosEstacionados.getDatos().add(ve);
             HelloApplication.estacionarVehiculo(ve);
         }else{
             alert.setAlertType(Alert.AlertType.WARNING);

@@ -9,6 +9,7 @@ public class VehiculoEstacionado extends Vehiculo {
     private SimpleObjectProperty<LocalDateTime> entrada;
     private SimpleObjectProperty<LocalDateTime> salida;
     private SimpleBooleanProperty pago;
+
     public VehiculoEstacionado() {
         super();
         this.entrada = new SimpleObjectProperty<>();
@@ -16,7 +17,11 @@ public class VehiculoEstacionado extends Vehiculo {
         this.pago = new SimpleBooleanProperty();
     }
 
-    public VehiculoEstacionado(String patente, LocalDateTime entrada, LocalDateTime salida,boolean pago) {
+    public VehiculoEstacionado(String patente) {
+        super(patente);
+    }
+
+    public VehiculoEstacionado(String patente, LocalDateTime entrada, LocalDateTime salida, boolean pago) {
         super(patente);
         this.entrada = new SimpleObjectProperty<>(entrada);
         this.salida = new SimpleObjectProperty<>(salida);

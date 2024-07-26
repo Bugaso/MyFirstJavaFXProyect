@@ -4,11 +4,12 @@ import com.bugardo.controllers.VehiculoEstacionado;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class VehiculosEstacionados {
-    private static ObservableList<VehiculoEstacionado> datos = FXCollections.observableArrayList();
+public class HistorialVehiculos {
+
+    private static ObservableList<VehiculoEstacionado> historial = FXCollections.observableArrayList();
 
     public static ObservableList<VehiculoEstacionado> getDatos() {
-        return datos;
+        return historial;
     }
 
     public static VehiculoEstacionado getVehiculo(VehiculoEstacionado ve){

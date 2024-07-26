@@ -30,8 +30,8 @@
 
 /* Estilo para las celdas cuando se seleccionan */
 .table-view .table-cell:filled:selected {
-    -fx-background-color: #007bff; /* Fondo azul claro para selección */
-    -fx-text-fill: #ffffff; /* Texto blanco en selección */
+    -fx-background-color: #2b00ff; /* Fondo azul claro para selección */
+    -fx-text-fill: #131a47; /* Texto blanco en selección */
 }
 
 /* Estilo para las celdas al pasar el ratón sobre ellas */
@@ -92,4 +92,24 @@
 
 .button:pressed {
     -fx-background-color: #397d39; /* Verde aún más oscuro */
+}
+
+#resetBtn{
+    -fx-background-color: #9e1b1b; /* Rojo */
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 2.5px 5px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2);
+}
+
+#resetBtn:hover {
+    -fx-background-color: #660e0e; /* Rojo más oscuro */
+}
+
+#resetBtn:pressed {
+    -fx-background-color: #360505; /* Rojo aún más oscuro */
 }
