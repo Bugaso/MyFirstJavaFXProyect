@@ -1,11 +1,11 @@
-package com.bugardo.garagefx;
+package com.bugardo.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 
 
 
-public class HelloController {
+public class MainController {
 
     @FXML
     private Pane regPane;

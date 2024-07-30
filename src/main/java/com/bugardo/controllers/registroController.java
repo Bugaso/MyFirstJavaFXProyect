@@ -1,8 +1,9 @@
 package com.bugardo.controllers;
 
+import com.bugardo.Service.AlertService;
 import com.bugardo.Service.VehiculosEstacionados;
 import com.bugardo.Validar;
-import com.bugardo.garagefx.HelloApplication;
+import com.bugardo.garagefx.GarageApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -35,29 +36,14 @@ public class registroController implements Initializable {
     public void Salvar(){
 
         if(patText.getText().isBlank()){
-            alert.setAlertType(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Patente Vacia");
-            alert.setTitle("Patente no fue ingresada");
-            alert.setContentText("Debe ingresar una patente para que el vehiculo sea registrado correctamente");
-            alert.show();
-
+            AlertService.PatenteAlert();
             return;
         }
         if(patText.getText().length() < 9 || patText.getText().length() > 9){
-            alert.setAlertType(Alert.AlertType.INFORMATION);
-            alert.setContentText("El formato de la patente es erroneo, debe tener una longitud de 9 caracteres");
-            alert.setHeaderText("Error de Formato de patente");
-            alert.setTitle("Formato Incorrecto");
-            alert.show();
-
+            AlertService.PatenteAlert();
             return;
         }if(!Validar.validarPat(patText.getText())){
-            alert.setAlertType(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Error de Formato de patente");
-            alert.setTitle("Formato Incorrecto");
-            alert.setContentText("El formato de la patente es erroneo, debe ser como en este ejemplo:\n" + "AB-123-CD");
-
-            alert.show();
+            AlertService.PatenteAlert();
             return;
         }
 
@@ -71,13 +57,9 @@ public class registroController implements Initializable {
 
         if(VehiculosEstacionados.getVehiculo(ve) == null){
             VehiculosEstacionados.getDatos().add(ve);
-            HelloApplication.estacionarVehiculo(ve);
+            GarageApplication.estacionarVehiculo(ve);
         }else{
-            alert.setAlertType(Alert.AlertType.WARNING);
-            alert.setTitle("Registro de Vehiculo");
-            alert.setHeaderText("Vehiculo ya registrado");
-            alert.setContentText("El vehiculo que quiere registrar ya se encuentra en el garage!!!");
-            alert.show();
+            AlertService.ExisteAlert();
         }
 
         patText.clear();

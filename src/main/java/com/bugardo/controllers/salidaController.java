@@ -1,10 +1,10 @@
 package com.bugardo.controllers;
 
+import com.bugardo.Service.AlertService;
 import com.bugardo.Service.HistorialVehiculos;
 import com.bugardo.Service.VehiculosEstacionados;
 import com.bugardo.celdasCustom.FechaCell;
 import com.bugardo.celdasCustom.PagoCell;
-import javafx.event.EventDispatcher;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
@@ -15,7 +15,6 @@ import java.net.URL;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 
@@ -42,7 +41,7 @@ public class salidaController implements Initializable{
     private Spinner<Integer> hourText;
     @FXML
     private Spinner<Integer> minText;
-    private Alert alert;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -64,26 +63,18 @@ public class salidaController implements Initializable{
                     });
             return elem;
         });
-        this.alert = new Alert(Alert.AlertType.ERROR);
+
 
     }
 
 
     public void buscarVehiculo(){
-        VehiculoEstacionado ve = null;
-        if(!patText.getText().isBlank()){
-            ve = VehiculosEstacionados.getVehiculo(new VehiculoEstacionado(patText.getText()));
-        }
-
+        VehiculoEstacionado ve;
+        ve = VehiculosEstacionados.getVehiculo(new VehiculoEstacionado(patText.getText()));
         if(ve == null){
-            alert.setTitle("Vehiculo inexistente");
-            alert.setHeaderText("Vehiculo no registrado");
-            alert.setContentText("El vehiculo que intenta buscar no se encuentra en la tabla de vehiculos registrados" +
-                    " asegurese de haber escrito correctamente la patente y que esté registrado");
-            alert.show();
+            AlertService.VehiculoAlert();
             return;
         }
-
         cargarVehiculo(ve);
     }
 
@@ -96,19 +87,12 @@ public class salidaController implements Initializable{
         VehiculoEstacionado ve = VehiculosEstacionados.getVehiculo(new VehiculoEstacionado(patText.getText()));
 
         if(ve == null){
-            alert.show();
-            alert.setTitle("Vehiculo inexistente");
-            alert.setHeaderText("Vehiculo no registrado");
-            alert.setContentText("El vehiculo que intenta buscar no se encuentra en la tabla de vehiculos registrados" +
-                    " asegurese de haber escrito correctamente la patente y que esté registrado");
+            AlertService.VehiculoAlert();
             return;
         }
 
         if(salidaDate.getValue() == null){
-
-            alert.setTitle("Formato de fecha");
-            alert.setContentText("La fecha de salida no fue introducida");
-            alert.show();
+            AlertService.FechaAlert();
             return;
         }
 
@@ -116,11 +100,9 @@ public class salidaController implements Initializable{
         LocalDateTime salida = LocalDateTime.of(aux.getYear(),aux.getMonthValue(),aux.getDayOfMonth(),hourText.getValue(),minText.getValue());
         if(ve.getEntrada().compareTo(salida) >= 0){
 
-            alert.setTitle("Formato de fecha");
-
-            alert.setContentText("La fecha de salida introducida es menor o igual a la fecha en que entro el vehiculo" +
+            String s = ("La fecha de salida introducida es menor o igual a la fecha en que entro el vehiculo" +
                     " por favor ingrese una fecha de salida valida");
-            alert.show();
+            AlertService.Alerta(Alert.AlertType.INFORMATION,"SalidaAlert,","Fecha incorrecta",s);
             return;
         }
         ve.setSalida(salida);

@@ -7,16 +7,15 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.kordamp.bootstrapfx.BootstrapFX;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class HelloApplication extends Application {
+public class GarageApplication extends Application {
     private static ArrayList<VehiculoEstacionado> garage = new ArrayList<>();
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(GarageApplication.class.getResource("main-view.fxml"));
 
             Scene scene = new Scene(fxmlLoader.load());
             //scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
@@ -24,6 +23,8 @@ public class HelloApplication extends Application {
             stage.setTitle("Garage App");
             stage.setScene(scene);
             stage.setResizable(false);
+            stage.setWidth(510);
+            stage.setHeight(400);
             stage.show();
 
 
