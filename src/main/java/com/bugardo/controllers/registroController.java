@@ -57,7 +57,7 @@ public class registroController implements Initializable {
 
         if(VehiculosEstacionados.getVehiculo(ve) == null){
             VehiculosEstacionados.getDatos().add(ve);
-            GarageApplication.estacionarVehiculo(ve);
+
         }else{
             AlertService.ExisteAlert();
         }

@@ -52,7 +52,7 @@ public class salidaController implements Initializable{
         fechaColm.setCellFactory(fecha -> new FechaCell());
 
         pagoColm.setCellValueFactory(new PropertyValueFactory<>("pago"));
-        pagoColm.setCellFactory(pago -> new PagoCell());
+        pagoColm.setCellFactory(pago -> new PagoCell(true));
 
         table.setItems(VehiculosEstacionados.getDatos());
         table.setPlaceholder(new Label("No hay vehiculos estacionados"));

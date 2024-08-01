@@ -64,6 +64,7 @@ public class VehiculoEstacionado extends Vehiculo {
         this.pago.set(pago);
     }
 
+
     @Override
     public String toString() {
         return "VehiculoEstacionado{" +

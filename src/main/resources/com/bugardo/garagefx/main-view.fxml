@@ -12,7 +12,7 @@
           <Button fx:id="regBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Registrar Vehiculo" textAlignment="CENTER"
                   onAction="#onRegButtonClick" textOverrun="CENTER_ELLIPSIS" />
             <Button fx:id="outBtn" mnemonicParsing="false" text="Sacar Vehiculo" onAction="#onOutButtonClick"/>
-            <Button fx:id="showBtn" mnemonicParsing="false" text="Vehiculos Estacionados" />
+            <Button fx:id="showBtn" mnemonicParsing="false" text="Vehiculos Estacionados" onAction="#onViewButtonClick"/>
             <Button fx:id="historialBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Historial de Vehiculos" />
         </items>
          <cursor>
@@ -20,12 +20,9 @@
          </cursor>
       </ToolBar>
       <Pane layoutY="35.0" prefHeight="366.0" prefWidth="505.0" >
-        <fx:include source="registro-view.fxml" fx:id="regPane" visible="false">
-
-        </fx:include>
-        <fx:include source="salida-view.fxml" fx:id="outPane" visible="false" >
-
-        </fx:include>
+          <fx:include source="registro-view.fxml" fx:id="regPane" visible="false"/>
+          <fx:include source="salida-view.fxml" fx:id="outPane" visible="false"/>
+          <fx:include source="estacionamiento-view.fxml" fx:id="viewPane" visible="false"/>
       </Pane>
 
 

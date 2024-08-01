@@ -12,6 +12,8 @@ public class MainController {
     @FXML
     private Pane outPane;
     @FXML
+    private Pane viewPane;
+    @FXML
     protected void onRegButtonClick() {
         resetPanes();
         regPane.setVisible(true);
@@ -27,11 +29,18 @@ public class MainController {
 
     }
 
+    public void onViewButtonClick(){
+        resetPanes();
+        viewPane.setVisible(true);
+        viewPane.toFront();
+        System.out.println(viewPane.toString());
+    }
     public void resetPanes(){
         regPane.setVisible(false);
         regPane.toBack();
         outPane.setVisible(false);
         outPane.toBack();
-
+        viewPane.setVisible(false);
+        viewPane.toBack();
     }
 }

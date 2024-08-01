@@ -1,14 +1,12 @@
 package com.bugardo.celdasCustom;
 import com.bugardo.controllers.VehiculoEstacionado;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.util.Callback;
 
 public class PagoCell extends TableCell<VehiculoEstacionado, Boolean> {
 
     private CheckBox checkBox;
 
-    public PagoCell() {
+    public PagoCell(boolean disable) {
         checkBox = new CheckBox();
         checkBox.setStyle("-fx-alignment: CENTER;");
         checkBox.selectedProperty().addListener((obs, wasSelected, isNowSelected) -> {
@@ -17,7 +15,7 @@ public class PagoCell extends TableCell<VehiculoEstacionado, Boolean> {
             }
         });
         setGraphic(checkBox);
-        checkBox.setDisable(true);
+        checkBox.setDisable(disable);
         setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
     }
 
