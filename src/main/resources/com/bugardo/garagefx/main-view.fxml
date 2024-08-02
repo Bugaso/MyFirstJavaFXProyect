@@ -13,7 +13,7 @@
                   onAction="#onRegButtonClick" textOverrun="CENTER_ELLIPSIS" />
             <Button fx:id="outBtn" mnemonicParsing="false" text="Sacar Vehiculo" onAction="#onOutButtonClick"/>
             <Button fx:id="showBtn" mnemonicParsing="false" text="Vehiculos Estacionados" onAction="#onViewButtonClick"/>
-            <Button fx:id="historialBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Historial de Vehiculos" />
+            <Button fx:id="historialBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Historial de Vehiculos" onAction="#onHistorialButtonClick" />
         </items>
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -23,6 +23,7 @@
           <fx:include source="registro-view.fxml" fx:id="regPane" visible="false"/>
           <fx:include source="salida-view.fxml" fx:id="outPane" visible="false"/>
           <fx:include source="estacionamiento-view.fxml" fx:id="viewPane" visible="false"/>
+          <fx:include source="historial-view.fxml" fx:id="historialPane" visible="false"/>
       </Pane>
 
 

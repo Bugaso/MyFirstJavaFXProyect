@@ -14,13 +14,15 @@ public class MainController {
     @FXML
     private Pane viewPane;
     @FXML
-    protected void onRegButtonClick() {
+    private Pane historialPane;
+
+    public void onRegButtonClick() {
         resetPanes();
         regPane.setVisible(true);
         regPane.toFront();
         System.out.println(regPane.toString());
     }
-    @FXML
+
     public void onOutButtonClick(){
         resetPanes();
         outPane.setVisible(true);
@@ -35,6 +37,13 @@ public class MainController {
         viewPane.toFront();
         System.out.println(viewPane.toString());
     }
+
+    public void onHistorialButtonClick(){
+        resetPanes();
+        historialPane.setVisible(true);
+        historialPane.toFront();
+    }
+
     public void resetPanes(){
         regPane.setVisible(false);
         regPane.toBack();
@@ -42,5 +51,7 @@ public class MainController {
         outPane.toBack();
         viewPane.setVisible(false);
         viewPane.toBack();
+        historialPane.setVisible(false);
+        historialPane.toBack();
     }
 }

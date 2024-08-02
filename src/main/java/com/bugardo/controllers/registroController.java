@@ -27,10 +27,15 @@ public class registroController implements Initializable {
     @FXML
     private Button regBtn;
 
-    private Alert alert;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.alert = new Alert(null);
+        patText.focusedProperty().addListener((observable,oldValue,newValue) -> {
+            if(patText.getText().equals("Ingrese la patente") && newValue){
+                patText.setText("");
+            }else if(patText.getText().isBlank()){
+                patText.setText("Ingrese la patente");
+            }
+        });
     }
 
     public void Salvar(){
@@ -62,7 +67,9 @@ public class registroController implements Initializable {
             AlertService.ExisteAlert();
         }
 
-        patText.clear();
+        patText.setText("Ingrese la patente");
+        hourText.getValueFactory().setValue(0);
+        minText.getValueFactory().setValue(0);
         pagCheck.setSelected(false);
     }
 }

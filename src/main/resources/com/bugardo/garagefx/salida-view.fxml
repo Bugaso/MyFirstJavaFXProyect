@@ -15,7 +15,7 @@
 <Pane fx:id="salPane" layoutY="35.0" prefHeight="329.0" prefWidth="505.0" stylesheets="@../../../com.bugardo.css/tablesView.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.salidaController">
    <children>
 
-      <TableView fx:id="table" editable="false" layoutX="37.0" layoutY="88.0" prefHeight="155.0" prefWidth="281.0">
+      <TableView fx:id="table" editable="false" layoutX="37.0" layoutY="88.0" prefHeight="172.0" prefWidth="281.0">
         <columns>
             <TableColumn fx:id="patColm" editable="false" prefWidth="83.0" reorderable="false" resizable="false" text="Patente" />
             <TableColumn fx:id="fechaColm" editable="false" prefWidth="131.0" reorderable="false" resizable="false" text="Fecha de entrada" />
@@ -30,11 +30,11 @@
          <font>
             <Font name="Cambria Bold" size="20.0" />
          </font></Label>
-       <TextField fx:id="patText" layoutX="340.0" layoutY="88.0" prefHeight="25.0" prefWidth="120.0" />
-       <Button fx:id="cargarBtn" layoutX="340.0" layoutY="121.0" mnemonicParsing="false" onAction="#buscarVehiculo" prefHeight="25.0" prefWidth="120.0" text="Cargar vehiculo" />
+       <TextField fx:id="patText" layoutX="340.0" layoutY="88.0" prefHeight="32.0" prefWidth="132.0" stylesheets="@../../../com.bugardo.css/textField.css" text="Ingrese la patente" />
+       <Button fx:id="cargarBtn" layoutX="346.0" layoutY="124.0" mnemonicParsing="false" onAction="#buscarVehiculo" prefHeight="25.0" prefWidth="120.0" text="Cargar vehiculo" />
 
-       <Group fx:id="salidaGroup" disable="true">
-           <DatePicker fx:id="salidaDate" layoutX="340.0" layoutY="153.0" prefHeight="25.0" prefWidth="120.0">
+       <Group fx:id="salidaGroup" disable="true" layoutX="5.0" layoutY="3.0">
+           <DatePicker fx:id="salidaDate" layoutX="341.0" layoutY="153.0" prefHeight="25.0" prefWidth="120.0" promptText="Fecha de salida">
                <tooltip>
                    <Tooltip fx:id="dateTool" text="Fecha de salida" textAlignment="CENTER" />
                </tooltip>

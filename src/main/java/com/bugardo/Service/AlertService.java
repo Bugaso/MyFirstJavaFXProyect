@@ -1,6 +1,11 @@
 package com.bugardo.Service;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
+
+
+import java.util.Optional;
 
 public class AlertService {
 
@@ -48,5 +53,17 @@ public class AlertService {
         alerta.setHeaderText(h);
         alerta.setContentText(c);
         alerta.show();
+    }
+
+    public static Optional<ButtonType> Alerta(String t, String h, String c){
+        alerta = new Alert(Alert.AlertType.CONFIRMATION);
+        alerta.setTitle(t);
+        alerta.setHeaderText(h);
+        alerta.setContentText(c);
+        alerta.getButtonTypes().setAll(
+                new ButtonType("No", ButtonData.NO),
+                new ButtonType("Sí", ButtonData.YES)
+        );
+        return alerta.showAndWait();
     }
 }

@@ -15,6 +15,7 @@ import java.net.URL;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -59,14 +60,20 @@ public class salidaController implements Initializable{
 
         table.setRowFactory(fila -> {TableRow<VehiculoEstacionado> elem = new TableRow<>();
                     elem.setOnMouseClicked( mouseEvent -> {if(!elem.isEmpty()){
-                        cargarVehiculo(elem.getItem());}
+                        patText.setText(elem.getItem().getPatente());}
                     });
             return elem;
         });
 
+        patText.focusedProperty().addListener((observable,oldValue,newValue) -> {
+            if(patText.getText().equals("Ingrese la patente") && newValue){
+                patText.setText("");
+            }else if(patText.getText().isBlank()){
+                patText.setText("Ingrese la patente");
+            }
+        });
 
     }
-
 
     public void buscarVehiculo(){
         VehiculoEstacionado ve;
@@ -105,14 +112,31 @@ public class salidaController implements Initializable{
             AlertService.Alerta(Alert.AlertType.INFORMATION,"SalidaAlert,","Fecha incorrecta",s);
             return;
         }
-        ve.setSalida(salida);
-        VehiculosEstacionados.getDatos().remove(ve);
-        HistorialVehiculos.getDatos().add(ve);
-        System.out.println(HistorialVehiculos.getDatos().getLast().toString()+HistorialVehiculos.getDatos().getLast().getSalida().toString());
+        Optional<ButtonType> resul = Optional.of(ButtonType.YES);
+        if(!ve.isPago()){
+            resul = AlertService.Alerta("Pago","Vehiculo no cobrado","El vehiculo que esta por salir no pagó" +
+                    " el estacionamiento cuando fue registrad.\n El dueño del vehiculo ya pago para sacarlo del estacionamiento?");
+
+        }
+        System.out.println(resul.get().getText());
+        if(resul.get().getText().equals("Sí") ){
+            ve.setSalida(salida);
+            VehiculosEstacionados.getDatos().remove(ve);
+            HistorialVehiculos.getDatos().add(ve);
+            resetBtn();
+            System.out.println(HistorialVehiculos.getDatos().getLast().toString()+HistorialVehiculos.getDatos().getLast().getSalida().toString());
+            return;
+        }
+        AlertService.Alerta(Alert.AlertType.INFORMATION,"Pago","Cobro no realizado","No se sacara el vehiculo hasta que se cobre" +
+                " por estacionarlo");
+        resetBtn();
+
     }
 
     public void resetBtn(){
         patText.clear();
+        hourText.getValueFactory().setValue(0);
+        minText.getValueFactory().setValue(0);
         salidaDate.setValue(null);
         salidaGroup.setDisable(true);
     }
