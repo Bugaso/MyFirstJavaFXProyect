@@ -30,7 +30,7 @@
 
 /* Estilo para las celdas cuando se seleccionan */
 .table-view .table-cell:filled:selected {
-    -fx-background-color: #2b00ff; /* Fondo azul claro para selección */
+    -fx-background-color: #2b00ff !important; /* Fondo azul claro para selección */
     -fx-text-fill: #131a47; /* Texto blanco en selección */
 }
 
@@ -42,13 +42,14 @@
 /* Estilo para la fila de la tabla */
 .table-view .table-row-cell {
     -fx-padding: 0; /* Sin espaciado interno en las filas */
-    -fx-border-color: #e0e0e0; /* Borde gris claro */
+    -fx-border-color: #e0e0e0 !important; /* Borde gris claro */
     -fx-border-width: 0 0 1px 0; /* Borde inferior */
 }
 
 /* Estilo para la fila cuando se selecciona */
 .table-view .table-row-cell:selected {
-    -fx-background-color: #e9ecef; /* Fondo gris muy claro para fila seleccionada */
+    -fx-border-color: #97b0c9 !important; /* Fondo gris muy claro para fila seleccionada */
+    -fx-border-width: 1px 1px 1px 1px; /* Borde inferior */
 }
 
 /* Estilo para la fila cuando pasa el ratón sobre ella */

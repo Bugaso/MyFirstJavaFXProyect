@@ -17,8 +17,8 @@
 
       <TableView fx:id="table" editable="false" layoutX="37.0" layoutY="88.0" prefHeight="172.0" prefWidth="281.0">
         <columns>
-            <TableColumn fx:id="patColm" editable="false" prefWidth="83.0" reorderable="false" resizable="false" text="Patente" />
-            <TableColumn fx:id="fechaColm" editable="false" prefWidth="131.0" reorderable="false" resizable="false" text="Fecha de entrada" />
+            <TableColumn fx:id="patColm" editable="false" prefWidth="75.0" reorderable="false" resizable="false" text="Patente" />
+            <TableColumn fx:id="fechaColm" editable="false" prefWidth="134.0" reorderable="false" resizable="false" text="Fecha de entrada" />
             <TableColumn fx:id="pagoColm" editable="false" prefWidth="66.0" reorderable="false" resizable="false" text="Pagado" />
         </columns>
          <columnResizePolicy>

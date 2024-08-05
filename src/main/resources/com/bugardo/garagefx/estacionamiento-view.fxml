@@ -12,11 +12,11 @@
 
 <Pane fx:id="EstacionPane" prefHeight="329" prefWidth="505.0" stylesheets="@../../../com.bugardo.css/tablesView.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.EstacionController">
    <children>
-      <TableView fx:id="table" disable="false" editable="true" layoutX="42.0" layoutY="65.0" prefHeight="200.0" prefWidth="278.0">
+      <TableView fx:id="table" editable="false" layoutX="42.0" layoutY="65.0" prefHeight="200.0" prefWidth="281.0">
         <columns>
-            <TableColumn fx:id="patColm" prefWidth="75.0" text="Patente" />
-            <TableColumn fx:id="fechaColm" prefWidth="139.0" text="Fecha de entrada" />
-            <TableColumn fx:id="pagoColm" editable="true" prefWidth="62.0" text="Pagó" />
+            <TableColumn fx:id="patColm" prefWidth="75.0" text="Patente" reorderable="false" resizable="false"/>
+            <TableColumn fx:id="fechaColm" prefWidth="134.0" text="Fecha de entrada" reorderable="false" resizable="false"/>
+            <TableColumn fx:id="pagoColm" editable="true" prefWidth="66.0" text="Pagado" reorderable="false" resizable="false"/>
         </columns>
       </TableView>
        <TextField fx:id="patText" editable="false" layoutX="342.0" layoutY="82.0" prefHeight="25.0" prefWidth="122.0" />

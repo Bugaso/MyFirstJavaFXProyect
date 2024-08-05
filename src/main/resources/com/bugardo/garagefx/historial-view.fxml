@@ -5,41 +5,43 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <Pane fx:id="EstacionPane" prefHeight="329" prefWidth="505.0" stylesheets="@../../../com.bugardo.css/tablesView.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.HistorialController">
     <children>
-        <TableView fx:id="table" disable="false" layoutX="36.0" layoutY="101.0" prefHeight="214.0" prefWidth="337.0">
+        <TableView fx:id="table" disable="false" layoutX="36.0" layoutY="101.0" prefHeight="214.0" prefWidth="340.0">
             <columns>
-                <TableColumn fx:id="patColm" editable="false" prefWidth="72.0" text="Patente" />
-                <TableColumn fx:id="fechaColm" editable="false" prefWidth="132.0" text="Fecha de entrada">
+                <TableColumn fx:id="patColm" editable="false" prefWidth="72.0" resizable="false" text="Patente" />
+                <TableColumn fx:id="fechaColm" editable="false" prefWidth="130.0" resizable="false" text="Fecha de entrada">
                <columns>
-                  <TableColumn minWidth="2.0" prefWidth="132.0" fx:id="fechaMin">
+                  <TableColumn fx:id="fechaMin" prefWidth="130.0">
                      <graphic>
                         <DatePicker fx:id="dateMin" promptText="Minimo" />
                      </graphic>
                   </TableColumn>
                </columns>
                 </TableColumn>
-                <TableColumn fx:id="salidaColm" editable="false" minWidth="2.0" prefWidth="129.0" text="Fecha de Salida">
+                <TableColumn fx:id="salidaColm" editable="false" minWidth="2.0" prefWidth="130.0" resizable="false" text="Fecha de Salida">
                <columns>
-                  <TableColumn editable="false" minWidth="2.0" prefWidth="132.0" fx:id="fechaMax">
+                  <TableColumn fx:id="fechaMax" editable="false" prefWidth="130.0">
                      <graphic>
-                        <DatePicker fx:id="dateMax" prefHeight="28.0" prefWidth="128.0" promptText="Limite" />
+                        <DatePicker fx:id="dateMax" promptText="Limite" />
                      </graphic>
                   </TableColumn>
                </columns>
             </TableColumn>
             </columns>
         </TableView>
-      <Button fx:id="resetBtn" ellipsisString="" layoutX="389.0" layoutY="144.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="98.0" text="Eliminar" />
+      <Button fx:id="resetBtn" ellipsisString="" layoutX="389.0" layoutY="162.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="23.0" prefWidth="98.0" text="Eliminar" />
       <Button fx:id="filBtn" layoutX="389.0" layoutY="101.0" mnemonicParsing="false" onAction="#setFilBtn" prefHeight="23.0" prefWidth="98.0" text="Filtrar fecha" />
       <Label layoutX="87.0" layoutY="41.0" text="Historial de vehiculos que salieron">
          <font>
             <Font name="Comic Sans MS Bold" size="20.0" />
          </font>
       </Label>
+      <TextField fx:id="patText" text="Ingrese la patente" layoutX="389.0" layoutY="131.0" prefHeight="25.0" prefWidth="98.0" />
 
     </children>
 </Pane>
