@@ -5,27 +5,25 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="Main" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.MainController">
+<Pane fx:id="Main" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.MainController">
    <children>
-      <ToolBar fx:id="barraTareas" prefHeight="35.0" prefWidth="503.0" >
+      <ToolBar fx:id="barraTareas" prefHeight="35.0" prefWidth="1040" stylesheets="@../../../com.bugardo.css/menuButton.css">
         <items>
-          <Button fx:id="regBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Registrar Vehiculo" textAlignment="CENTER"
-                  onAction="#onRegButtonClick" textOverrun="CENTER_ELLIPSIS" />
-            <Button fx:id="outBtn" mnemonicParsing="false" text="Sacar Vehiculo" onAction="#onOutButtonClick"/>
-            <Button fx:id="showBtn" mnemonicParsing="false" text="Vehiculos Estacionados" onAction="#onViewButtonClick"/>
-            <Button fx:id="historialBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Historial de Vehiculos" onAction="#onHistorialButtonClick" />
+          <Button fx:id="regBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onRegButtonClick" text="Registrar Vehiculo" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+            <Button fx:id="outBtn" mnemonicParsing="false" onAction="#onOutButtonClick" prefHeight="41.0" prefWidth="204.0" text="Sacar Vehiculo" />
+            <Button fx:id="showBtn" mnemonicParsing="false" onAction="#onViewButtonClick" prefHeight="41.0" prefWidth="309.0" text="Vehiculos Estacionados" />
+            <Button fx:id="historialBtn" mnemonicParsing="false" onAction="#onHistorialButtonClick" prefHeight="41.0" prefWidth="270.0" text="Historial de Vehiculos" />
         </items>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ToolBar>
-      <Pane layoutY="35.0" prefHeight="366.0" prefWidth="505.0" >
-          <fx:include source="registro-view.fxml" fx:id="regPane" visible="false"/>
-          <fx:include source="salida-view.fxml" fx:id="outPane" visible="false"/>
-          <fx:include source="estacionamiento-view.fxml" fx:id="viewPane" visible="false"/>
-          <fx:include source="historial-view.fxml" fx:id="historialPane" visible="false"/>
+      <Pane layoutY="49.0" prefHeight="753.0" prefWidth="1039.0">
+          <fx:include fx:id="regPane" source="registro-view.fxml" visible="false" />
+          <fx:include fx:id="outPane" source="salida-view.fxml" visible="false" />
+          <fx:include fx:id="viewPane" source="estacionamiento-view.fxml" visible="false" />
+          <fx:include fx:id="historialPane" source="historial-view.fxml" visible="false" />
       </Pane>
-
 
    </children>
 </Pane>

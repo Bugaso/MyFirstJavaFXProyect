@@ -10,34 +10,39 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="regPane" layoutY="35.0" prefHeight="366.0" prefWidth="505.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.registroController">
+<Pane fx:id="regPane" layoutY="35.0" prefHeight="732" prefWidth="1010" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.registroController">
    <children>
-       <Label fx:id="titReg" layoutX="161.0" layoutY="32.0" text="Registre el vehiculo">
+       <Label fx:id="titReg" layoutX="268.0" layoutY="143.0" text="Registre el vehiculo">
            <font>
-               <Font name="Cambria Bold" size="20" />
+               <Font name="Cambria Bold" size="53.0" />
            </font>
        </Label>
-       <TextField fx:id="patText" layoutX="177.0" layoutY="86.0" prefHeight="25.0" prefWidth="149.0" text="Ingrese la patente">
+       <TextField fx:id="patText" alignment="CENTER" layoutX="333.0" layoutY="255.0" prefHeight="54.0" prefWidth="401.0" text="Ingrese la patente" stylesheets="@../../../com.bugardo.css/textField.css">
          <tooltip>
             <Tooltip fx:id="patTool" text="Ingrese la patente del vehiculo" textAlignment="CENTER" />
          </tooltip></TextField>
 
-      <Spinner fx:id="hourText" layoutX="177.0" layoutY="147.0" max="23" min="0" prefHeight="25.0" prefWidth="69.0">
+      <Spinner fx:id="hourText" layoutX="427.0" layoutY="335.0" max="23" min="0" prefHeight="54.0" prefWidth="82.0" stylesheets="@../../../com.bugardo.css/Spinner.css">
          <tooltip>
             <Tooltip fx:id="horTool" text="Hora de llegada" textAlignment="CENTER" />
          </tooltip></Spinner>
-      <Spinner fx:id="minText" layoutX="259.0" layoutY="147.0" max="59" min="0" prefHeight="25.0" prefWidth="69.0">
+      <Spinner fx:id="minText" layoutX="651.0" layoutY="336.0" max="59" min="0" prefHeight="54.0" prefWidth="82.0" stylesheets="@../../../com.bugardo.css/Spinner.css">
          <tooltip>
             <Tooltip fx:id="minTool" text="Minuto de llegada" />
          </tooltip></Spinner>
-      <Label layoutX="177.0" layoutY="69.0" text="Patente" />
-      <Label layoutX="177.0" layoutY="130.0" prefHeight="17.0" prefWidth="34.0" text="Hora" />
-      <Label layoutX="259.0" layoutY="130.0" text="Minuto" />
-      <CheckBox fx:id="pagCheck" layoutX="263.0" layoutY="179.0" mnemonicParsing="false" text="Pagado" />
-      <Button fx:id="regBtn" layoutX="179.0" layoutY="212.0" mnemonicParsing="false" onAction="#Salvar" prefHeight="25.0" prefWidth="149.0" text="Registrar" />
+      <Label layoutX="332.0" layoutY="335.0" prefHeight="55.0" prefWidth="95.0" text="Hora">
+         <font>
+            <Font size="38.0" />
+         </font></Label>
+      <Label layoutX="520.0" layoutY="335.0" text="Minuto">
+         <font>
+            <Font size="38.0" />
+         </font></Label>
+      <CheckBox fx:id="pagCheck" contentDisplay="CENTER" layoutX="334.0" layoutY="394.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="186.0" text="Pagado" textAlignment="CENTER">
+         <font>
+            <Font size="25.0" />
+         </font></CheckBox>
+      <Button fx:id="regBtn" layoutX="384.0" layoutY="467.0" mnemonicParsing="false" onAction="#Salvar" prefHeight="47.0" prefWidth="299.0" text="Registrar" textAlignment="CENTER" stylesheets="@../../../com.bugardo.css/button.css"/>
    </children>
-   <stylesheets>
-      <URL value="@../../../com.bugardo.css/textField.css" />
-   </stylesheets>
 
 </Pane>

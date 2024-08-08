@@ -1,0 +1,19 @@
+.button {
+    -fx-background-color: #4CAF50; /* Verde */
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 2.5px 5px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: #45a049; /* Verde más oscuro */
+}
+
+.button:pressed {
+    -fx-background-color: #397d39; /* Verde aún más oscuro */
+}

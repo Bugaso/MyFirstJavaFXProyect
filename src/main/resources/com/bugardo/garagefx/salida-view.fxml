@@ -12,45 +12,40 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="salPane" layoutY="35.0" prefHeight="329.0" prefWidth="505.0" stylesheets="@../../../com.bugardo.css/tablesView.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.salidaController">
+<Pane fx:id="salPane" layoutY="35.0" prefHeight="732" prefWidth="1010"  xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.salidaController">
    <children>
 
-      <TableView fx:id="table" editable="false" layoutX="37.0" layoutY="88.0" prefHeight="172.0" prefWidth="281.0">
+      <TableView fx:id="table" editable="false" layoutX="37.0" layoutY="88.0" prefHeight="447.0" prefWidth="662.0" stylesheets="@../../../com.bugardo.css/tablesView.css">
         <columns>
-            <TableColumn fx:id="patColm" editable="false" prefWidth="75.0" reorderable="false" resizable="false" text="Patente" />
-            <TableColumn fx:id="fechaColm" editable="false" prefWidth="134.0" reorderable="false" resizable="false" text="Fecha de entrada" />
-            <TableColumn fx:id="pagoColm" editable="false" prefWidth="66.0" reorderable="false" resizable="false" text="Pagado" />
+            <TableColumn fx:id="patColm" editable="false" prefWidth="192.0" reorderable="false" resizable="false" text="Patente" />
+            <TableColumn fx:id="fechaColm" editable="false" prefWidth="256.0" reorderable="false" resizable="false" text="Fecha de entrada" />
+            <TableColumn fx:id="pagoColm" editable="false" minWidth="0.0" prefWidth="208.0" reorderable="false" resizable="false" text="Pagado" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
 
-      <Label layoutX="174.0" layoutY="37.0" prefHeight="24.0" prefWidth="158.0" text="Retirar Vehiculo">
+      <Label layoutX="369.0" layoutY="24.0" prefHeight="49.0" prefWidth="312.0" text="Retirar Vehiculo">
          <font>
-            <Font name="Cambria Bold" size="20.0" />
+            <Font name="Cambria Bold" size="40.0" />
          </font></Label>
-       <TextField fx:id="patText" layoutX="340.0" layoutY="88.0" prefHeight="32.0" prefWidth="132.0" stylesheets="@../../../com.bugardo.css/textField.css" text="Ingrese la patente" />
-       <Button fx:id="cargarBtn" layoutX="346.0" layoutY="124.0" mnemonicParsing="false" onAction="#buscarVehiculo" prefHeight="25.0" prefWidth="120.0" text="Cargar vehiculo" />
+       <TextField fx:id="patText" layoutX="725.0" layoutY="122.0" prefHeight="54.0" prefWidth="257.0" stylesheets="@../../../com.bugardo.css/textField.css" text="Ingrese la patente" />
+       <Button fx:id="cargarBtn" layoutX="755.0" layoutY="195.0" mnemonicParsing="false" onAction="#buscarVehiculo" prefHeight="49.0" prefWidth="197.0" stylesheets="@../../../com.bugardo.css/button.css" text="Cargar vehiculo" />
 
-       <Group fx:id="salidaGroup" disable="true" layoutX="5.0" layoutY="3.0">
-           <DatePicker fx:id="salidaDate" layoutX="341.0" layoutY="153.0" prefHeight="25.0" prefWidth="120.0" promptText="Fecha de salida">
+       <Group fx:id="salidaGroup" disable="true" layoutX="426.0" layoutY="114.0">
+           <DatePicker fx:id="salidaDate" layoutX="300.0" layoutY="153.0" prefHeight="63.0" prefWidth="261.0" promptText="Fecha de salida" stylesheets="@../../../com.bugardo.css/textField.css">
                <tooltip>
                    <Tooltip fx:id="dateTool" text="Fecha de salida" textAlignment="CENTER" />
                </tooltip>
            </DatePicker>
-           <Spinner fx:id="hourText" layoutX="340.0" layoutY="186.0" max="23" min="0" prefHeight="25.0" prefWidth="56.0">
+           <Spinner fx:id="hourText" layoutX="313.0" layoutY="234.0" max="23" min="0" prefHeight="54.0" prefWidth="83.0" stylesheets="@../../../com.bugardo.css/Spinner.css">
                <tooltip>
                    <Tooltip fx:id="horTool" text="Hora de salida" textAlignment="CENTER" />
                </tooltip>
            </Spinner>
-           <Spinner fx:id="minText" layoutX="403.0" layoutY="186.0" max="59" min="0" prefHeight="25.0" prefWidth="57.0">
-               <tooltip>
-                   <Tooltip fx:id="minTool" text="Minuto de salida" />
-               </tooltip>
-           </Spinner>
 
-           <Button fx:id="resetBtn" layoutX="437.0" layoutY="221.0" mnemonicParsing="false" onAction="#resetBtn" prefHeight="23.0" prefWidth="25.0" text="X">
+           <Button fx:id="resetBtn" layoutX="513.0" layoutY="341.0" mnemonicParsing="false" onAction="#resetBtn" prefHeight="37.0" prefWidth="36.0" text="X" stylesheets="@../../../com.bugardo.css/cancelBtn.css">
 
                <tooltip>
                    <Tooltip fx:id="restTool" text="Restaurar campos">
@@ -58,7 +53,12 @@
                    </Tooltip>
                </tooltip>
            </Button>
-           <Button fx:id="sacarBtn" contentDisplay="CENTER" layoutX="340.0" layoutY="221.0" mnemonicParsing="false" onAction="#SacarVehiculo" text="Sacar Vehiculo" />
+           <Spinner fx:id="minText" layoutX="465.0" layoutY="234.0" max="59" min="0" prefHeight="54.0" prefWidth="82.0" stylesheets="@../../../com.bugardo.css/Spinner.css">
+               <tooltip>
+                   <Tooltip fx:id="minTool" text="Minuto de salida" />
+               </tooltip>
+           </Spinner>
+           <Button fx:id="sacarBtn" contentDisplay="CENTER" layoutX="314.0" layoutY="339.0" mnemonicParsing="false" onAction="#SacarVehiculo" prefHeight="41.0" prefWidth="192.0" text="Sacar Vehiculo" stylesheets="@../../../com.bugardo.css/button.css" />
 
        </Group>
 

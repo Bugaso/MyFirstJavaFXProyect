@@ -1,7 +1,5 @@
 package com.bugardo.garagefx;
 
-import com.bugardo.controllers.Vehiculo;
-import com.bugardo.controllers.VehiculoEstacionado;
 import javafx.application.Application;
 
 import javafx.fxml.FXMLLoader;
@@ -9,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class GarageApplication extends Application {
     @Override
@@ -22,8 +19,8 @@ public class GarageApplication extends Application {
             stage.setTitle("Garage App");
             stage.setScene(scene);
             stage.setResizable(false);
-            stage.setWidth(520);
-            stage.setHeight(400);
+            stage.setWidth(1040);
+            stage.setHeight(800);
             stage.show();
 
 

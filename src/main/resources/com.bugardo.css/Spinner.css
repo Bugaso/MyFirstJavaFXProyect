@@ -1,15 +1,11 @@
-
-
 .text-field {
     -fx-text-fill: gray;
 }
 
-/* ModernTextField.css */
+/* Spinner.css */
 .text-field {
     -fx-background-color: #f5f5f5; /* Fondo claro */
     -fx-border-color: #ddd; /* Borde gris claro */
-    -fx-border-radius: 10px; /* Esquinas redondeadas */
-    -fx-background-radius: 10px; /* Esquinas redondeadas */
     -fx-padding: 8px 10x; /* Relleno interno */
     -fx-font-size: 25px; /* Tamaño de fuente acorde al botón */
     -fx-font-weight: normal;
@@ -17,20 +13,8 @@
     -fx-prompt-text-fill: #aaa; /* Color del texto de sugerencia */
     -fx-cursor: text;
 }
-#patText:focused{
-
-    -fx-text-fill: black;
-    -fx-border-color: #4CAF50; /* Color de borde cuando está enfocado */
-    -fx-background-color: white; /* Fondo blanco cuando está enfocado */
-}
-
 .text-field:focused  {
     -fx-text-fill: black;
     -fx-border-color: #4CAF50; /* Color de borde cuando está enfocado */
     -fx-background-color: white; /* Fondo blanco cuando está enfocado */
 }
-
-
-
-/* ModernButton.css */
-

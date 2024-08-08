@@ -9,11 +9,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Background;
-import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
-
-import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -66,7 +61,9 @@ public class HistorialController implements Initializable {
 
         table.setRowFactory(fila -> {TableRow<VehiculoEstacionado> elem = new TableRow<>();
             elem.setOnMouseClicked(evento ->{
-                this.patText.setText(elem.getItem().getPatente());
+                if(elem.getItem() != null){
+                    this.patText.setText(elem.getItem().getPatente());
+                }
             });
             return elem;
         });
@@ -80,6 +77,12 @@ public class HistorialController implements Initializable {
         });
     }
 
+    public void refresh(){
+        dateMax.setValue(null);
+        dateMin.setValue(null);
+        table.setItems(HistorialVehiculos.getDatos());
+        table.refresh();
+    }
     public void setFilBtn(){
         LocalDate min = dateMin.getValue();
         LocalDate max = dateMax.getValue();
@@ -96,7 +99,7 @@ public class HistorialController implements Initializable {
                 }
             }
             table.setItems(filtrados);
-            table.refresh();
+
         }
 
         if(min == null && max != null){
@@ -106,7 +109,7 @@ public class HistorialController implements Initializable {
                 }
             }
             table.setItems(filtrados);
-            table.refresh();
+
         }
 
         if(min != null && max != null){
@@ -116,9 +119,9 @@ public class HistorialController implements Initializable {
                 }
             }
             table.setItems(filtrados);
-            table.refresh();
-        }
 
+        }
+        table.refresh();
     }
 
     public void deleteBtn(){
@@ -138,6 +141,7 @@ public class HistorialController implements Initializable {
         if(resul.get().getText() == "Sí"){
             HistorialVehiculos.deleteVehiculo(new VehiculoEstacionado(patText.getText()));
         }
+        refresh();
     }
 
 
