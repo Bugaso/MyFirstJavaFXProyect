@@ -24,7 +24,6 @@
           <fx:include fx:id="outPane" source="salida-view.fxml" visible="false" />
           <fx:include fx:id="viewPane" source="estacionamiento-view.fxml" visible="false" />
           <fx:include fx:id="historialPane" source="historial-view.fxml" visible="false" />
-
       </Pane>
 
    </children>

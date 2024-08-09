@@ -2,8 +2,7 @@ package com.bugardo.controllers;
 
 import com.bugardo.Service.AlertService;
 import com.bugardo.Service.VehiculosEstacionados;
-import com.bugardo.Validar;
-import com.bugardo.garagefx.GarageApplication;
+import com.bugardo.Service.Validar;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;

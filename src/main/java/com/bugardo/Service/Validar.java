@@ -1,4 +1,4 @@
-package com.bugardo;
+package com.bugardo.Service;
 
 public class Validar {
     public static boolean validarPat(String s){
