@@ -1,6 +1,7 @@
 package com.bugardo.controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
 
@@ -15,6 +16,8 @@ public class MainController {
     private Pane viewPane;
     @FXML
     private Pane historialPane;
+    @FXML
+    private ImageView iconcito;
 
     public void onRegButtonClick() {
         resetPanes();
@@ -54,4 +57,6 @@ public class MainController {
         historialPane.setVisible(false);
         historialPane.toBack();
     }
+
+
 }

@@ -11,7 +11,7 @@
 }
 
 .button:hover {
-    -fx-background-color: #455ca0; /* Azul más oscuro */
+    -fx-background-color: #7994d9; /* Azul más oscuro */
 }
 
 .button:pressed {

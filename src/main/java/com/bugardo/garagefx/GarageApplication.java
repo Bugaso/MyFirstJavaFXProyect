@@ -4,9 +4,13 @@ import javafx.application.Application;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+
 import java.io.IOException;
+
 
 public class GarageApplication extends Application {
     @Override
@@ -21,8 +25,8 @@ public class GarageApplication extends Application {
             stage.setResizable(false);
             stage.setWidth(1040);
             stage.setHeight(800);
+            stage.getIcons().add(new Image(GarageApplication.class.getResource("/com.bugardo.images/coche-en-garaje.png").toExternalForm()));
             stage.show();
-
 
     }
 
