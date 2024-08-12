@@ -18,7 +18,6 @@ public class GarageApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(GarageApplication.class.getResource("main-view.fxml"));
 
             Scene scene = new Scene(fxmlLoader.load());
-            //scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
 
             stage.setTitle("Garage App");
             stage.setScene(scene);
