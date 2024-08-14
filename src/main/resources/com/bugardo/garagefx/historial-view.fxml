@@ -20,7 +20,7 @@
 
                   <TableColumn fx:id="fechaMin" prefWidth="267.14" reorderable="false" resizable="false">
                      <graphic>
-                        <DatePicker fx:id="dateMin" promptText="Minimo" />
+                        <DatePicker fx:id="dateMin" promptText="Minimo" stylesheets="@../../../com.bugardo.css/datePicker.css"/>
                      </graphic>
                   </TableColumn>
                </columns>
@@ -29,7 +29,7 @@
                <columns>
                   <TableColumn fx:id="fechaMax" editable="false" prefWidth="274.9" reorderable="false" resizable="false">
                      <graphic>
-                        <DatePicker fx:id="dateMax" prefHeight="27.0" prefWidth="262" promptText="Limite" />
+                        <DatePicker fx:id="dateMax" prefHeight="27.0" prefWidth="262" promptText="Limite" stylesheets="@../../../com.bugardo.css/datePicker.css"/>
                      </graphic>
                   </TableColumn>
                </columns>

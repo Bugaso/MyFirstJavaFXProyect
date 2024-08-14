@@ -124,7 +124,7 @@ public class salidaController implements Initializable{
             VehiculosEstacionados.getDatos().remove(ve);
             HistorialVehiculos.getDatos().add(ve);
             resetBtn();
-            System.out.println(HistorialVehiculos.getDatos().getLast().toString()+HistorialVehiculos.getDatos().getLast().getSalida().toString());
+            //System.out.println(HistorialVehiculos.getDatos().getLast().toString()+HistorialVehiculos.getDatos().getLast().getSalida().toString());
             return;
         }
         AlertService.Alerta(Alert.AlertType.INFORMATION,"Pago","Cobro no realizado","No se sacara el vehiculo hasta que se cobre" +
