@@ -1,0 +1,53 @@
+/* General Styles for the ToggleButton */
+.toggle-button {
+    -fx-background-color: #ced4da;
+    -fx-text-fill: #495057;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-padding: 5px 15px;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.0, 0, 4);
+}
+
+.toggle-button:armed {
+    -fx-background-color: #adb5bd;
+}
+
+.toggle-button:hover {
+    -fx-background-color: #adb5bd;
+}
+
+.toggle-button:pressed {
+    -fx-background-color: #6c757d;
+    -fx-effect: none;
+}
+
+/* Selected State (Toggle On) */
+.toggle-button:selected {
+    -fx-background-color: #007bff;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0, 123, 255, 0.5), 10, 0.0, 0, 4);
+}
+
+.toggle-button:selected:hover {
+    -fx-background-color: #0056b3;
+}
+
+.toggle-button:selected:pressed {
+    -fx-background-color: #003f7f;
+    -fx-effect: none;
+}
+
+/* Text inside the ToggleButton */
+.toggle-button .text {
+    -fx-font-weight: bold;
+    -fx-fill: inherit;
+}
+
+/* ToggleButton Focused */
+.toggle-button:focused {
+    -fx-border-color: #007bff;
+    -fx-border-width: 2px;
+}

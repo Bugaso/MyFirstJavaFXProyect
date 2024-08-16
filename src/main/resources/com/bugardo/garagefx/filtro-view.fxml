@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="200" prefWidth="255.0" style="-fx-border-color: #6a0dad;"  xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.FiltroController">
+   <children>
+      <DatePicker fx:id="minDate" layoutX="14.0" layoutY="14.0" prefHeight="67.0" prefWidth="228.0" promptText="Minimo" stylesheets="@../../../com.bugardo.css/datePicker.css" />
+      <DatePicker fx:id="maxDate" layoutX="13.0" layoutY="88.0" prefHeight="67.0" prefWidth="228.0" promptText="Maximo" stylesheets="@../../../com.bugardo.css/datePicker.css" />
+      <ToggleButton
+              stylesheets="@../../../com.bugardo.css/ToggleButton.css" fx:id="esBtn" contentDisplay="CENTER" layoutX="86.0" layoutY="161.0" mnemonicParsing="false" onAction="#OnActionBtn" prefHeight="30.0" prefWidth="94.0" text="Entrada" textAlignment="CENTER" underline="true" />
+   </children>
+</Pane>

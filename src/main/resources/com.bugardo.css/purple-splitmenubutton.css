@@ -1,0 +1,42 @@
+
+
+
+.split-menu-button {
+    -fx-background-color: #6a0dad; /* Purpura */
+    -fx-font-weight: bold; /* Negrita */
+    -fx-border-color: #9b30ff; /* Borde purpura claro */
+    -fx-font-size: 20px;
+
+}
+
+
+.split-menu-button .button:hover {
+    -fx-background-color: #7a0eaf; /* Cambio de color al pasar el ratón */
+}
+
+.split-menu-button .button:pressed {
+    -fx-background-color: #4b0082; /* Color más oscuro al hacer clic */
+}
+
+.split-menu-button:hover {
+    -fx-background-color: #7a0eaf; /* Cambio de color al pasar el ratón */
+}
+
+.split-menu-button:pressed {
+    -fx-background-color: #4b0082; /* Color más oscuro al hacer clic */
+}
+
+.split-menu-button .arrow-button {
+    -fx-background-color: #9b30ff; /* Color de la flecha */
+
+}
+
+.split-menu-button .arrow {
+    -fx-background-color: white; /* Color de la flecha */
+
+}
+
+.split-menu-button .menu-item {
+    -fx-background-color: white; /* Fondo del menú */
+}
+

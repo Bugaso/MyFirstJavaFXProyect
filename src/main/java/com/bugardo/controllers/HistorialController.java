@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -30,15 +32,18 @@ public class HistorialController implements Initializable {
     @FXML
     private TableColumn <VehiculoEstacionado, LocalDateTime> fechaMax;
     @FXML
-    private DatePicker dateMin;
+    private Button delBtn;
     @FXML
-    private DatePicker dateMax;
-    @FXML
-    private Button resetBtn;
-    @FXML
-    private Button filBtn;
+    private Button resBtn;
     @FXML
     private TextField patText;
+    @FXML
+    private SplitMenuButton filMenu;
+    @FXML
+    private Pane filPane;
+    private DatePicker minDate;
+    private DatePicker maxDate;
+    private ToggleButton esBtn;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -53,13 +58,9 @@ public class HistorialController implements Initializable {
         salidaColm.setCellValueFactory(new PropertyValueFactory<>("salida"));
         salidaColm.setCellFactory(fecha -> new FechaCell());
 
-        fechaMin.setCellValueFactory(new PropertyValueFactory<>("entrada"));
-        fechaMin.setCellFactory(fecha -> new FechaCell());
 
-        fechaMax.setCellValueFactory(new PropertyValueFactory<>("salida"));
-        fechaMax.setCellFactory(fecha -> new FechaCell());
-
-        table.setRowFactory(fila -> {TableRow<VehiculoEstacionado> elem = new TableRow<>();
+        table.setRowFactory(fila -> {
+            TableRow<VehiculoEstacionado> elem = new TableRow<>();
             elem.setOnMouseClicked(evento ->{
                 if(elem.getItem() != null){
                     this.patText.setText(elem.getItem().getPatente());
@@ -75,50 +76,93 @@ public class HistorialController implements Initializable {
                 patText.setText("Ingrese la patente");
             }
         });
+
+        minDate = (DatePicker) filPane.getChildren().get(0);
+        maxDate = (DatePicker) filPane.getChildren().get(1);
+        esBtn = (ToggleButton) filPane.getChildren().get(2);
+
+
     }
 
     public void refresh(){
-        dateMax.setValue(null);
-        dateMin.setValue(null);
+        minDate.setValue(null);
+        maxDate.setValue(null);
+        esBtn.setSelected(false);
         table.setItems(HistorialVehiculos.getDatos());
         table.refresh();
     }
     public void setFilBtn(){
-        LocalDate min = dateMin.getValue();
-        LocalDate max = dateMax.getValue();
+        LocalDate min = minDate.getValue();
+        LocalDate max = maxDate.getValue();
         if(min == null && max == null){
             AlertService.FechaAlert();
+            refresh();
             return;
         }
         ObservableList<VehiculoEstacionado> filtrados = FXCollections.observableArrayList();
-
-        if(min != null && max == null){
-            for(VehiculoEstacionado ve : HistorialVehiculos.getDatos()){
-                if(ve.getEntrada().compareTo(min.atStartOfDay()) >= 0){
-                    filtrados.add(ve);
+        if(esBtn.isSelected()){
+            if(min != null && max == null){
+                for(VehiculoEstacionado ve : HistorialVehiculos.getDatos()){
+                    if(ve.getSalida().compareTo(min.atStartOfDay()) >= 0){
+                        filtrados.add(ve);
+                    }
                 }
+                table.setItems(filtrados);
             }
-            table.setItems(filtrados);
+
+            if(min == null && max != null){
+                for(VehiculoEstacionado ve : HistorialVehiculos.getDatos()){
+                    if(ve.getSalida().compareTo(max.atStartOfDay()) <= 0){
+                        filtrados.add(ve);
+                    }
+                }
+                table.setItems(filtrados);
+            }
+
+            if(min != null && max != null){
+                for(VehiculoEstacionado ve : HistorialVehiculos.getDatos()){
+                    if(ve.getSalida().compareTo(min.atStartOfDay()) >= 0
+                            && ve.getSalida().compareTo(max.atStartOfDay()) <= 0){
+
+                        filtrados.add(ve);
+
+                    }
+                }
+                table.setItems(filtrados);
+            }
 
         }
 
-        if(min == null && max != null){
-            for(VehiculoEstacionado ve : HistorialVehiculos.getDatos()){
-                if(ve.getSalida().compareTo(max.atStartOfDay()) <= 0){
-                    filtrados.add(ve);
+        if(!esBtn.isSelected()){
+            if(min != null && max == null){
+                for(VehiculoEstacionado ve : HistorialVehiculos.getDatos()){
+                    if(ve.getEntrada().compareTo(min.atStartOfDay()) >= 0){
+                        filtrados.add(ve);
+                    }
                 }
+                table.setItems(filtrados);
             }
-            table.setItems(filtrados);
 
-        }
-
-        if(min != null && max != null){
-            for(VehiculoEstacionado ve : HistorialVehiculos.getDatos()){
-                if(ve.getEntrada().compareTo(min.atStartOfDay()) >= 0 && ve.getSalida().compareTo(max.atStartOfDay()) <= 0){
-                    filtrados.add(ve);
+            if(min == null && max != null){
+                for(VehiculoEstacionado ve : HistorialVehiculos.getDatos()){
+                    if(ve.getEntrada().compareTo(max.atStartOfDay()) <= 0){
+                        filtrados.add(ve);
+                    }
                 }
+                table.setItems(filtrados);
             }
-            table.setItems(filtrados);
+
+            if(min != null && max != null){
+                for(VehiculoEstacionado ve : HistorialVehiculos.getDatos()){
+                    if(ve.getEntrada().compareTo(min.atStartOfDay()) >= 0
+                            && ve.getEntrada().compareTo(max.atStartOfDay()) <= 0){
+
+                        filtrados.add(ve);
+
+                    }
+                }
+                table.setItems(filtrados);
+            }
 
         }
         table.refresh();
