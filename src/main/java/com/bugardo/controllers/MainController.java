@@ -1,12 +1,19 @@
 package com.bugardo.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class MainController {
+public class MainController implements Initializable {
 
     @FXML
     private Pane regPane;
@@ -17,7 +24,15 @@ public class MainController {
     @FXML
     private Pane historialPane;
     @FXML
-    private ImageView iconcito;
+    private Button regBtn;
+    @FXML
+    private Button outBtn;
+    @FXML
+    private Button showBtn;
+    @FXML
+    private Button historialBtn;
+    @FXML
+    private ToolBar barraTareas;
 
     public void onRegButtonClick() {
         resetPanes();
@@ -58,5 +73,41 @@ public class MainController {
         historialPane.toBack();
     }
 
+    public void extendButton(Button btn, String text){
+        btn.setText(text);
+        btn.setPrefWidth(290);
+        btn.getGraphic().setTranslateX(-105);
+        btn.setContentDisplay(ContentDisplay.CENTER);
+    }
+    public void defaultButton(Button btn, String text){
+        btn.setText(text);
+        btn.setPrefWidth(64);
+        btn.getGraphic().setTranslateX(0);
+        btn.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+    }
+    public void mostrarItems(){
+        if(barraTareas.getPrefWidth() == 95.0){
+            barraTareas.setPrefWidth(300);
+            barraTareas.toFront();
+            extendButton(regBtn,"Registrar");
+            extendButton(outBtn,"Salida");
+            extendButton(showBtn,"Garage");
+            extendButton(historialBtn,"Historial");
+        }else{
+            barraTareas.setPrefWidth(95);
+            barraTareas.toBack();
+            defaultButton(regBtn,"");
+            defaultButton(outBtn,"");
+            defaultButton(showBtn,"");
+            defaultButton(historialBtn,"");
+        }
 
+
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        barraTareas.toBack();
+    }
 }

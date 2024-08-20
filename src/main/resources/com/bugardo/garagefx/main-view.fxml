@@ -3,23 +3,58 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="Main" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.MainController">
+<Pane fx:id="Main" prefWidth="1133.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.MainController">
    <children>
-      <ToolBar fx:id="barraTareas" prefHeight="35.0" prefWidth="1040" stylesheets="@../../../com.bugardo.css/menuButton.css">
+      <ToolBar fx:id="barraTareas" orientation="VERTICAL" prefHeight="804.0" prefWidth="95.0" stylesheets="@../../../com.bugardo.css/menuButton.css">
         <items>
-          <Button fx:id="regBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onRegButtonClick" text="Registrar Vehiculo" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
-            <Button fx:id="outBtn" mnemonicParsing="false" onAction="#onOutButtonClick" prefHeight="41.0" prefWidth="204.0" text="Sacar Vehiculo" />
-            <Button fx:id="showBtn" mnemonicParsing="false" onAction="#onViewButtonClick" prefHeight="41.0" prefWidth="309.0" text="Vehiculos Estacionados" />
-            <Button fx:id="historialBtn" mnemonicParsing="false" onAction="#onHistorialButtonClick" prefHeight="41.0" prefWidth="270.0" text="Historial de Vehiculos" />
+            <ImageView fx:id="menuBtn" fitHeight="64.0" fitWidth="73.0" onMouseClicked="#mostrarItems" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../com.bugardo.images/menu.png" />
+               </image>
+            </ImageView>
+          <Button fx:id="regBtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" mnemonicParsing="false" onAction="#onRegButtonClick" prefHeight="70.0" prefWidth="64.0" text="Registro" textOverrun="CENTER_ELLIPSIS">
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../com.bugardo.images/concesionario-de-coches.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="outBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onOutButtonClick" prefHeight="70.0" prefWidth="64.0">
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../com.bugardo.images/alquiler-de-coches.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="showBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onViewButtonClick" prefHeight="41.0" prefWidth="64.0">
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../com.bugardo.images/garaje.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="historialBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onHistorialButtonClick" prefHeight="69.0" prefWidth="64.0">
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../com.bugardo.images/certificado-de-registro.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
         </items>
 
          <cursor>
-            <Cursor fx:constant="HAND" />
+            <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ToolBar>
-      <Pane layoutY="49.0" prefHeight="753.0" prefWidth="1039.0">
+      <Pane layoutX="95.0" prefHeight="804.0" prefWidth="1039.0" style="-fx-background-color: white;">
           <fx:include fx:id="regPane" source="registro-view.fxml" visible="false" />
           <fx:include fx:id="outPane" source="salida-view.fxml" visible="false" />
           <fx:include fx:id="viewPane" source="estacionamiento-view.fxml" visible="false" />

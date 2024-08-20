@@ -15,5 +15,11 @@
 }
 
 .button:pressed {
-    -fx-background-color: #394b7d /* Azul aún más oscuro */
+    -fx-background-color: #394b7d; /* Azul aún más oscuro */
+}
+
+.tool-bar{
+     -fx-background-color:  #6882c4;
+     -fx-padding: 10px;
+     -fx-spacing: 15px;
 }

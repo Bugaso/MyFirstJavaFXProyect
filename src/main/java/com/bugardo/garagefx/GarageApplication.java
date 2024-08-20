@@ -22,7 +22,7 @@ public class GarageApplication extends Application {
             stage.setTitle("Garage App");
             stage.setScene(scene);
             stage.setResizable(false);
-            stage.setWidth(1040);
+            stage.setWidth(1128);
             stage.setHeight(800);
             stage.getIcons().add(new Image(GarageApplication.class.getResource("/com.bugardo.images/coche-en-garaje.png").toExternalForm()));
             stage.show();
