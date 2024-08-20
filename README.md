@@ -1,2 +1,2 @@
 # MyFirstJavaFXProyect
-Use JDK 22 for app
+Use JDK 17 for app
