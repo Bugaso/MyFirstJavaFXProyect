@@ -10,6 +10,7 @@ public class VehiculoEstacionado extends Vehiculo {
     private SimpleObjectProperty<LocalDateTime> salida;
     private SimpleBooleanProperty pago;
 
+
     public VehiculoEstacionado() {
         super();
         this.entrada = new SimpleObjectProperty<>();

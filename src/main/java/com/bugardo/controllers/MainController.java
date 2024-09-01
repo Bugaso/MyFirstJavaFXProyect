@@ -24,6 +24,8 @@ public class MainController implements Initializable {
     @FXML
     private Pane historialPane;
     @FXML
+    private Button homeBtn;
+    @FXML
     private Button regBtn;
     @FXML
     private Button outBtn;
@@ -89,13 +91,16 @@ public class MainController implements Initializable {
         if(barraTareas.getPrefWidth() == 95.0){
             barraTareas.setPrefWidth(300);
             barraTareas.toFront();
+            extendButton(homeBtn,"Home");
             extendButton(regBtn,"Registrar");
             extendButton(outBtn,"Salida");
             extendButton(showBtn,"Garage");
             extendButton(historialBtn,"Historial");
+
         }else{
             barraTareas.setPrefWidth(95);
             barraTareas.toBack();
+            defaultButton(homeBtn,"");
             defaultButton(regBtn,"");
             defaultButton(outBtn,"");
             defaultButton(showBtn,"");

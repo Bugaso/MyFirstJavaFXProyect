@@ -20,6 +20,8 @@
 
 .tool-bar{
      -fx-background-color:  #6882c4;
+
      -fx-padding: 10px;
      -fx-spacing: 15px;
+     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2);
 }

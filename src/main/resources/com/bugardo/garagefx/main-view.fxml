@@ -16,6 +16,15 @@
                   <Image url="@../../../com.bugardo.images/menu.png" />
                </image>
             </ImageView>
+            <Button fx:id="homeBtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" onAction="#resetPanes">
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../com.bugardo.images/casa.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
           <Button fx:id="regBtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" mnemonicParsing="false" onAction="#onRegButtonClick" prefHeight="70.0" prefWidth="64.0" text="Registro" textOverrun="CENTER_ELLIPSIS">
                <graphic>
                   <ImageView fitHeight="64.0" fitWidth="64.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">

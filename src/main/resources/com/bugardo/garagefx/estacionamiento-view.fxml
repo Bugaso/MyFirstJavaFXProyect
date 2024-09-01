@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="EstacionPane" prefHeight="732" prefWidth="1010"  xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.EstacionController">
+<Pane fx:id="EstacionPane" prefHeight="732" prefWidth="1010" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bugardo.controllers.EstacionController">
    <children>
-       <TableView fx:id="table" editable="false" layoutX="37.0" layoutY="88.0" prefHeight="447.0" prefWidth="662.0" stylesheets="@../../../com.bugardo.css/tablesView.css">
+       <TableView fx:id="table" editable="false" layoutX="41.0" layoutY="143.0" prefHeight="447.0" prefWidth="662.0" stylesheets="@../../../com.bugardo.css/tablesView.css">
            <columns>
                <TableColumn fx:id="patColm" editable="false" prefWidth="192.0" reorderable="false" resizable="false" text="Patente" />
                <TableColumn fx:id="fechaColm" editable="false" prefWidth="256.0" reorderable="false" resizable="false" text="Fecha de entrada" />
@@ -23,14 +23,14 @@
                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
            </columnResizePolicy>
        </TableView>
-       <TextField fx:id="patText" editable="false" layoutX="734.0" layoutY="160.0" prefHeight="54.0" prefWidth="232.0" stylesheets="@../../../com.bugardo.css/textField.css" />
-       <Label layoutX="734.0" layoutY="99.0" text="Patente seleccionada">
+       <TextField fx:id="patText" editable="false" layoutX="738.0" layoutY="215.0" prefHeight="54.0" prefWidth="232.0" stylesheets="@../../../com.bugardo.css/textField.css" />
+       <Label layoutX="738.0" layoutY="154.0" text="Patente seleccionada">
          <font>
             <Font size="25.0" />
          </font></Label>
-       <Group fx:id="group" disable="true" layoutX="370.0" layoutY="147.0" >
-           <Spinner fx:id="minText" initialValue="0" layoutX="482.0" layoutY="151.0" max="59" min="0" prefHeight="54.0" prefWidth="80.0" stylesheets="@../../../com.bugardo.css/Spinner.css"/>
-           <Spinner fx:id="hourText" initialValue="0" layoutX="369.0" layoutY="151.0" max="23" min="0" prefHeight="54.0" prefWidth="80.0" stylesheets="@../../../com.bugardo.css/Spinner.css"/>
+       <Group fx:id="group" disable="true" layoutX="374.0" layoutY="202.0">
+           <Spinner fx:id="minText" initialValue="0" layoutX="482.0" layoutY="151.0" max="59" min="0" prefHeight="54.0" prefWidth="80.0" stylesheets="@../../../com.bugardo.css/Spinner.css" />
+           <Spinner fx:id="hourText" initialValue="0" layoutX="369.0" layoutY="151.0" max="23" min="0" prefHeight="54.0" prefWidth="80.0" stylesheets="@../../../com.bugardo.css/Spinner.css" />
            <Label layoutX="381.0" layoutY="106.0" prefHeight="35.0" prefWidth="55.0" text="Hora">
             <font>
                <Font size="24.0" />
@@ -43,8 +43,13 @@
             <font>
                <Font size="25.0" />
             </font></CheckBox>
-           <Button fx:id="saveBtn" layoutX="373.0" layoutY="331.0" mnemonicParsing="false" onAction="#onSaveClick" prefHeight="41.0" prefWidth="214.0" text="Guardar cambios" stylesheets="@../../../com.bugardo.css/button.css"/>
+           <Button fx:id="saveBtn" layoutX="373.0" layoutY="331.0" mnemonicParsing="false" onAction="#onSaveClick" prefHeight="41.0" prefWidth="214.0" stylesheets="@../../../com.bugardo.css/button.css" text="Guardar cambios" />
        </Group>
+      <Label layoutX="221.0" layoutY="45.0" text="Vehiculos estacionados">
+          <font>
+              <Font name="Cambria Bold" size="53.0" />
+          </font>
+      </Label>
 
    </children>
 </Pane>

@@ -25,10 +25,10 @@
         </TableView>
       <Button fx:id="delBtn" ellipsisString="" layoutX="781.0" layoutY="353.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="54.0" prefWidth="188.0" stylesheets="@../../../com.bugardo.css/cancelBtn.css" text="Eliminar" />
       <Button fx:id="resBtn" layoutX="781.0" layoutY="279.0" mnemonicParsing="false" onAction="#refresh" prefHeight="54.0" prefWidth="188.0" stylesheets="@../../../com.bugardo.css/button.css" text="Resetear" />
-      <Label layoutX="279.0" layoutY="38.0" stylesheets="@../../../com.bugardo.css/textField.css" text="Historial de vehiculos que salieron">
-         <font>
-            <Font size="30.0" />
-         </font>
+      <Label layoutX="83.0" layoutY="23.0" stylesheets="@../../../com.bugardo.css/textField.css" text="Historial de vehiculos que salieron">
+          <font>
+              <Font name="Cambria Bold" size="53.0" />
+          </font>
       </Label>
       <TextField fx:id="patText" alignment="CENTER" layoutX="754.0" layoutY="129.0" prefHeight="54.0" prefWidth="242.0" stylesheets="@../../../com.bugardo.css/textField.css" text="Ingrese la patente" />
 
