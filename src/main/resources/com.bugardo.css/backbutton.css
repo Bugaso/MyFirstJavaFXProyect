@@ -1,0 +1,20 @@
+
+.button{
+    -fx-background-color: #928de3; /* Rojo */
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 2.5px 5px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: #7b75e0; /* Rojo más oscuro */
+}
+
+.button:pressed {
+    -fx-background-color: #645ce0; /* Rojo aún más oscuro */
+}

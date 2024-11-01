@@ -1,5 +1,6 @@
 package com.bugardo.controllers;
 
+import com.bugardo.Service.AuthService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -14,7 +15,8 @@ import java.util.ResourceBundle;
 
 
 public class MainController implements Initializable {
-
+    @FXML
+    private Pane homePane;
     @FXML
     private Pane regPane;
     @FXML
@@ -23,6 +25,7 @@ public class MainController implements Initializable {
     private Pane viewPane;
     @FXML
     private Pane historialPane;
+
     @FXML
     private Button homeBtn;
     @FXML
@@ -36,35 +39,57 @@ public class MainController implements Initializable {
     @FXML
     private ToolBar barraTareas;
 
-    public void onRegButtonClick() {
+    public void onHomeButtonClick(){
         resetPanes();
-        regPane.setVisible(true);
-        regPane.toFront();
-        System.out.println(regPane.toString());
+        homePane.toFront();
+        homePane.setVisible(true);
+        System.out.println(homePane.toString());
+    }
+
+    public void onRegButtonClick() {
+
+        if(AuthService.getUsuario() != null){
+            resetPanes();
+            regPane.setVisible(true);
+            regPane.toFront();
+            System.out.println(regPane.toString());
+        }
+
     }
 
     public void onOutButtonClick(){
-        resetPanes();
-        outPane.setVisible(true);
-        outPane.toFront();
-        System.out.println(outPane.toString());
+        if(AuthService.getUsuario() != null){
+            resetPanes();
+            outPane.setVisible(true);
+            outPane.toFront();
+            System.out.println(outPane.toString());
+        }
+
 
     }
 
     public void onViewButtonClick(){
-        resetPanes();
-        viewPane.setVisible(true);
-        viewPane.toFront();
-        System.out.println(viewPane.toString());
+        if(AuthService.getUsuario() != null && AuthService.getUsuario().getAcceso() == 1){
+            resetPanes();
+            viewPane.setVisible(true);
+            viewPane.toFront();
+            System.out.println(viewPane.toString());
+        }
+
     }
 
     public void onHistorialButtonClick(){
-        resetPanes();
-        historialPane.setVisible(true);
-        historialPane.toFront();
+        if(AuthService.getUsuario() != null && AuthService.getUsuario().getAcceso() == 1){
+            resetPanes();
+            historialPane.setVisible(true);
+            historialPane.toFront();
+        }
+
     }
 
     public void resetPanes(){
+        homePane.setVisible(false);
+        homePane.toBack();
         regPane.setVisible(false);
         regPane.toBack();
         outPane.setVisible(false);
@@ -114,5 +139,6 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         barraTareas.toBack();
+
     }
 }

@@ -16,7 +16,7 @@
                   <Image url="@../../../com.bugardo.images/menu.png" />
                </image>
             </ImageView>
-            <Button fx:id="homeBtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" onAction="#resetPanes">
+            <Button fx:id="homeBtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" onAction="#onHomeButtonClick">
                <graphic>
                   <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -64,6 +64,7 @@
          </cursor>
       </ToolBar>
       <Pane layoutX="95.0" prefHeight="804.0" prefWidth="1039.0" style="-fx-background-color: white;">
+          <fx:include fx:id="homePane" source="home-view.fxml" visible="true" />
           <fx:include fx:id="regPane" source="registro-view.fxml" visible="false" />
           <fx:include fx:id="outPane" source="salida-view.fxml" visible="false" />
           <fx:include fx:id="viewPane" source="estacionamiento-view.fxml" visible="false" />
