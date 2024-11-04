@@ -37,6 +37,7 @@ public class HomeController {
         if(AuthService.setUsuario(UserText.getText(),pasText.getText())){
             UserText.setText("");
             pasText.setText("");
+            MainController.setEnableBar();
         }
     }
 

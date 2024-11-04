@@ -25,7 +25,8 @@ public class MainController implements Initializable {
     private Pane viewPane;
     @FXML
     private Pane historialPane;
-
+    @FXML
+    private ImageView menuBtn;
     @FXML
     private Button homeBtn;
     @FXML
@@ -39,6 +40,36 @@ public class MainController implements Initializable {
     @FXML
     private ToolBar barraTareas;
 
+    private static ToolBar refBar;
+
+    public static void setEnableBar(){
+        for(Node btn : refBar.getItems()){
+            System.out.println(btn.getId());
+        }
+        enableButtons();
+    }
+
+    private void disableAll(){
+        for(Node btn : refBar.getItems()){
+            if(btn.getId() != menuBtn.getId()){
+                btn.setDisable(true);
+            }
+        }
+    }
+    private static void enableButtons(){
+        if(AuthService.getUsuario().getAcceso() == 0){
+            for(Node btn : refBar.getItems()){
+                if(!btn.getId().equals("showBtn") && !btn.getId().equals("historialBtn")){
+                    btn.setDisable(false);
+                }
+            }
+            System.out.println("Sesion de usuario normal");
+            return;
+        }
+        for(Node btn : refBar.getItems()){
+            btn.setDisable(false);
+        }
+    }
     public void onHomeButtonClick(){
         resetPanes();
         homePane.toFront();
@@ -139,6 +170,7 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         barraTareas.toBack();
-
+        refBar = barraTareas;
+        disableAll();
     }
 }
