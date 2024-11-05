@@ -4,10 +4,7 @@ import com.bugardo.Service.AlertService;
 import com.bugardo.Service.AuthService;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class HomeController {
     @FXML
@@ -33,10 +30,19 @@ public class HomeController {
     @FXML
     private PasswordField cpassText;
 
+    @FXML
+    private Group LoguedGroup;
+    @FXML
+    private Label UserLabel;
+    @FXML
+    private Label MailLabel;
+
+
     public void IniciarSesion(){
         if(AuthService.setUsuario(UserText.getText(),pasText.getText())){
             UserText.setText("");
             pasText.setText("");
+            LoguedMenu();
             MainController.setEnableBar();
         }
     }
@@ -71,6 +77,21 @@ public class HomeController {
         RegistroGroup.setVisible(false);
     }
 
+    public void SesionClosed(){
+        LoguedGroup.setVisible(false);
+        MainController.disableButtons();
+        AuthService.closeSession();
+        SesionFormulario();
+    }
+
+    public void LoguedMenu(){
+        SesionGroup.setVisible(false);
+        RegistroGroup.setVisible(false);
+        LoguedGroup.setVisible(true);
+        UserLabel.setText(AuthService.getUsuario().getUserName());
+        MailLabel.setText(AuthService.getUsuario().getUserMail());
+
+    }
     public void RegistrarUsuario(){
 
 

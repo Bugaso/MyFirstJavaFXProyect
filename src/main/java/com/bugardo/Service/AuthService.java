@@ -80,6 +80,5 @@ public class AuthService {
     }
     public static void closeSession(){
         usuario = null;
-        root.setAcceso(0);
     }
 }

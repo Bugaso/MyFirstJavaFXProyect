@@ -49,13 +49,14 @@ public class MainController implements Initializable {
         enableButtons();
     }
 
-    private void disableAll(){
+    public static void disableButtons(){
         for(Node btn : refBar.getItems()){
-            if(btn.getId() != menuBtn.getId()){
+            if(!btn.getId().equals("menuBtn")){
                 btn.setDisable(true);
             }
         }
     }
+
     private static void enableButtons(){
         if(AuthService.getUsuario().getAcceso() == 0){
             for(Node btn : refBar.getItems()){
@@ -63,7 +64,7 @@ public class MainController implements Initializable {
                     btn.setDisable(false);
                 }
             }
-            System.out.println("Sesion de usuario normal");
+            System.out.println("Sesión de usuario normal");
             return;
         }
         for(Node btn : refBar.getItems()){
@@ -79,42 +80,42 @@ public class MainController implements Initializable {
 
     public void onRegButtonClick() {
 
-        if(AuthService.getUsuario() != null){
+
             resetPanes();
             regPane.setVisible(true);
             regPane.toFront();
             System.out.println(regPane.toString());
-        }
+
 
     }
 
     public void onOutButtonClick(){
-        if(AuthService.getUsuario() != null){
+
             resetPanes();
             outPane.setVisible(true);
             outPane.toFront();
             System.out.println(outPane.toString());
-        }
+
 
 
     }
 
     public void onViewButtonClick(){
-        if(AuthService.getUsuario() != null && AuthService.getUsuario().getAcceso() == 1){
+
             resetPanes();
             viewPane.setVisible(true);
             viewPane.toFront();
             System.out.println(viewPane.toString());
-        }
+
 
     }
 
     public void onHistorialButtonClick(){
-        if(AuthService.getUsuario() != null && AuthService.getUsuario().getAcceso() == 1){
+
             resetPanes();
             historialPane.setVisible(true);
             historialPane.toFront();
-        }
+
 
     }
 
@@ -171,6 +172,6 @@ public class MainController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         barraTareas.toBack();
         refBar = barraTareas;
-        disableAll();
+        disableButtons();
     }
 }

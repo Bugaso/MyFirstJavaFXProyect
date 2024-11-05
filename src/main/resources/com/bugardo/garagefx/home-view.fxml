@@ -24,7 +24,7 @@
             <TextField fx:id="UserText" promptText="Nombre, Correo,..." stylesheets="@../../../com.bugardo.css/textField.css" />
             <PasswordField fx:id="pasText" layoutY="79.0" promptText="Contraseña" stylesheets="@../../../com.bugardo.css/textField.css" />
             <Button fx:id="logBtn" layoutX="59.0" layoutY="203.0" mnemonicParsing="false" onAction="#IniciarSesion" prefHeight="41.0" prefWidth="194.0" stylesheets="@../../../com.bugardo.css/button.css" text="Iniciar sesion" />
-            <Text fx:id="olvPass" fill="#2a16e0" fontSmoothingType="LCD" layoutX="39.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olvidé mi contraseña" underline="true">
+            <Text fx:id="olvPass" fill="#2a16e0" fontSmoothingType="LCD" layoutX="39.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olvidé mi contraseña" textAlignment="CENTER" underline="true" visible="false">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -41,8 +41,8 @@
             <PasswordField fx:id="passText" layoutX="-1.0" layoutY="127.0" promptText="Ingrese la contraseña" stylesheets="@../../../com.bugardo.css/textField.css" />
             <PasswordField fx:id="cpassText" layoutX="-1.0" layoutY="192.0" promptText="Repita la contraseña" stylesheets="@../../../com.bugardo.css/textField.css" />
             <TextField fx:id="mailText" layoutX="-1.0" layoutY="65.0" promptText="Correo electronico" stylesheets="@../../../com.bugardo.css/textField.css" />
-            <Button fx:id="regBtn" layoutX="117.0" layoutY="264.0" mnemonicParsing="false" stylesheets="@../../../com.bugardo.css/button.css" text="Guardar Usuario" onAction="#RegistrarUsuario"/>
-            <Button fx:id="volBtn" layoutY="263.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../../../com.bugardo.css/backbutton.css" onAction="#SesionFormulario">
+            <Button fx:id="regBtn" layoutX="117.0" layoutY="264.0" mnemonicParsing="false" onAction="#RegistrarUsuario" stylesheets="@../../../com.bugardo.css/button.css" text="Guardar Usuario" />
+            <Button fx:id="volBtn" layoutY="263.0" mnemonicParsing="false" onAction="#SesionFormulario" prefHeight="32.0" prefWidth="32.0" stylesheets="@../../../com.bugardo.css/backbutton.css">
                <graphic>
                   <ImageView fitHeight="36.0" fitWidth="42.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
@@ -51,7 +51,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="cleanBtn" layoutX="58.0" layoutY="263.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../../../com.bugardo.css/cleanButton.css" onAction="#clear">
+            <Button fx:id="cleanBtn" layoutX="58.0" layoutY="263.0" mnemonicParsing="false" onAction="#clear" prefHeight="32.0" prefWidth="32.0" stylesheets="@../../../com.bugardo.css/cleanButton.css">
                <graphic>
                   <ImageView fitHeight="36.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -60,6 +60,21 @@
                   </ImageView>
                </graphic>
             </Button>
+         </children>
+      </Group>
+      <Group fx:id="LoguedGroup" layoutX="373.0" layoutY="407.0" visible="false">
+         <children>
+            <Label fx:id="UserLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-118.0" layoutY="-237.0" prefHeight="40.0" prefWidth="500.0" text="Root" textAlignment="CENTER">
+               <font>
+                  <Font name="Cambria" size="32.0" />
+               </font>
+            </Label>
+            <Button fx:id="CloseSession" layoutX="65.0" layoutY="-94.0" mnemonicParsing="false" onAction="#SesionClosed" stylesheets="@../../../com.bugardo.css/backbutton.css" text="Cerrar Sesion" textAlignment="CENTER" />
+            <Label fx:id="MailLabel" alignment="CENTER" layoutX="-117.0" layoutY="-163.0" prefHeight="40.0" prefWidth="500.0" text="Mail">
+               <font>
+                  <Font name="Cambria" size="32.0" />
+               </font>
+            </Label>
          </children>
       </Group>
    </children>
